@@ -1,0 +1,103 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a5b1c2;
+}
+.container {
+  position: relative;
+  width: 512px;
+  height: 384px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 10px 10px 10px #485460;
+}
+.radio-btn {
+  display: none;
+}
+.images-container {
+  display: flex;
+  width: 400%;
+  animation: slide-animation 10s infinite;
+  -webkit-animation: slide-animation 10s infinite;
+}
+.image {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+.image img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+.btn-container {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.btn {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+#btn1:hover ~ .btn-container .btn:nth-child(1) {
+  background-color: yellow;
+}
+
+#btn2:hover ~ .btn-container .btn:nth-child(2) {
+  background-color: red;
+}
+
+#btn3:hover ~ .btn-container .btn:nth-child(3) {
+  background-color: green;
+}
+
+#btn4:hover ~ .btn-container .btn:nth-child(4) {
+  background-color: blue;
+}
+
+#btn1:checked ~ .btn-container .btn:nth-child(1) {
+  background-color: yellow;
+}
+
+#btn2:checked ~ .btn-container .btn:nth-child(2) {
+  background-color: red;
+}
+
+#btn3:checked ~ .btn-container .btn:nth-child(3) {
+  background-color: green;
+}
+
+#btn4:checked ~ .btn-container .btn:nth-child(4) {
+  background-color: blue;
+}
+
+.radio-btn:checked + .images-container {
+  animation-play-state: paused;
+}
+.radio-btn:nth-child(1):checked ~ .images-container {
+  transform: translateX(0%);
+}
+.radio-btn:nth-child(2):checked ~ .images-container {
+  transform: translateX(-25%);
+}
+.radio-btn:nth-child(3):checked ~ .images-container {
+  transform: translateX(-50%);
+}
+.radio-btn:nth-child(4):checked ~ .images-container {
+  transform: translateX(-75%);
+}
